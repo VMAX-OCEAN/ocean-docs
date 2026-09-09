@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Realistic Earth Globe</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  html, body { margin:0; height:100%; background:#000; overflow:hidden; }
+  #scene { position:absolute; inset:0; cursor: grab; }
+  #scene:active { cursor: grabbing; }
+</style>
+</head>
+<body>
+<div id="scene"></div>
+<script>
+// =====================================================================
+// Standalone realistic Earth globe — Three.js, no external 3D model file.
+// Textures are open NASA Blue Marble-derived imagery (via three.js's own
+// example asset set, mirrored on jsDelivr's GitHub CDN so it works from
+// any origin). Drag to rotate; it also auto-rotates slowly on its own.
+//
+// To reuse: drop this file anywhere, or copy the <script> block into your
+// own page — everything (scene, camera, lights, globe, clouds, atmosphere,
+// stars, drag controls) is self-contained below.
+// =====================================================================
+
+const container = document.getElementById('scene');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);
+camera.position.set(0, 0, 3.1);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputEncoding = THREE.sRGBEncoding;
+container.appendChild(renderer.domElement);
+
+// starfield backdrop
+const starGeo = new THREE.BufferGeometry();
+const starCount = 1500;
+const starPos = new Float32Array(starCount * 3);
+for (let i = 0; i < starCount; i++) {
+  const r = 30 + Math.random() * 40;
+  const theta = Math.random() * Math.PI * 2, phi = Math.acos(2 * Math.random() - 1);
+  starPos[i*3]   = r * Math.sin(phi) * Math.cos(theta);
+  starPos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+  starPos[i*3+2] = r * Math.cos(phi);
+}
+starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0xffffff, size: 0.09, sizeAttenuation: true })));
+
+// globe
+const rotGroup = new THREE.Group();
+scene.add(rotGroup);
+rotGroup.rotation.y = 0.4;
+
+const globe = new THREE.Mesh(
+  new THREE.SphereGeometry(1, 96, 96),
+  new THREE.MeshBasicMaterial({ color: 0x1b3a5c })
+);
+rotGroup.add(globe);
+
+const texLoader = new THREE.TextureLoader();
+const TEX_BASE = 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/textures/planets/';
+
+texLoader.load('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg', tex => {
+  tex.encoding = THREE.sRGBEncoding;
+  globe.material.map = tex;
+  globe.material.needsUpdate = true;
+});
+
+// cloud layer
+const clouds = new THREE.Mesh(
+  new THREE.SphereGeometry(1.012, 64, 64),
+  new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false })
+);
+rotGroup.add(clouds);
+texLoader.load(TEX_BASE + 'earth_clouds_1024.png', tex => {
+  tex.encoding = THREE.sRGBEncoding;
+  clouds.material.map = tex;
+  clouds.material.opacity = 0.35;
+  clouds.material.needsUpdate = true;
+});
+
+// atmosphere rim glow
+const atmoMat = new THREE.ShaderMaterial({
+  side: THREE.BackSide, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  uniforms: { glowColor: { value: new THREE.Color(0x4fb8ff) } },
+  vertexShader: `
+    varying vec3 vNormal;
+    void main(){
+      vNormal = normalize(normalMatrix * normal);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }`,
+  fragmentShader: `
+    varying vec3 vNormal;
+    uniform vec3 glowColor;
+    void main(){
+      float intensity = pow(0.72 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 4.5);
+      gl_FragColor = vec4(glowColor, clamp(intensity, 0.0, 1.0) * 0.6);
+    }`
+});
+scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.03, 64, 64), atmoMat));
+
+// drag-to-rotate
+let dragging = false, lastX = 0, lastY = 0;
+renderer.domElement.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
+window.addEventListener('pointerup', () => dragging = false);
+window.addEventListener('pointermove', e => {
+  if (!dragging) return;
+  rotGroup.rotation.y += (e.clientX - lastX) * 0.005;
+  rotGroup.rotation.x += (e.clientY - lastY) * 0.005;
+  rotGroup.rotation.x = Math.max(-1.1, Math.min(1.1, rotGroup.rotation.x));
+  lastX = e.clientX; lastY = e.clientY;
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  if (!dragging) rotGroup.rotation.y += 0.0007;
+  clouds.rotation.y += 0.00025;
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>

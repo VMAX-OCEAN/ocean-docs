@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.venv/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Data files (too large for git)
+data/
+*.zarr
+*.sqlite
+*.sqlite3
+*.db
+*.nc
+*.nc4
+*.grb
+*.grb2
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cesium
+.cesium/
+
+# Temp
+*.tmp
+*.bak
