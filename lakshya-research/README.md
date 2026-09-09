@@ -42,6 +42,7 @@ Browser → Render (only for isosurface)    ← occasional, cold start OK
 | [`change-log.md`](change-log.md) | **All decisions & architecture changes** — detailed record of every change |
 | [`cross-check-verification.md`](cross-check-verification.md) | Honest risk assessment — verifies each decision, flags risks, fallbacks |
 | [`revised-master-plan.md`](revised-master-plan.md) | **👉 THE DEFINITIVE PLAN** — de-risk first, then build in 6 phases |
+| [`approach-comparison.md`](approach-comparison.md) | **Every choice, every alternative, every reason** — why we rejected bad approaches |
 
 ## Quick Start
 
