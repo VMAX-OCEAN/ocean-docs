@@ -40,17 +40,17 @@ Browser → Render (only for isosurface)    ← occasional, cold start OK
 | [`deployment-checklist.md`](deployment-checklist.md) | Step-by-step checklist |
 | [`render-vs-alternatives.md`](render-vs-alternatives.md) | Render vs alternatives comparison |
 | [`change-log.md`](change-log.md) | **All decisions & architecture changes** — detailed record of every change |
-| [`cross-check-verification.md`](cross-check-verification.md) | **Honest risk assessment** — verifies each decision, flags risks, fallbacks |
+| [`cross-check-verification.md`](cross-check-verification.md) | Honest risk assessment — verifies each decision, flags risks, fallbacks |
+| [`revised-master-plan.md`](revised-master-plan.md) | **👉 THE DEFINITIVE PLAN** — de-risk first, then build in 6 phases |
 
-## Quick Start (Free Tier)
+## Quick Start
 
-1. **Cloudflare R2** — store Zarr data (10 GB free, zero egress)
-2. **Supabase** — store Argo/Glider metadata (500 MB Postgres free)
-3. **Render** — deploy backend for isosurface compute (free, spins down)
-4. **Vercel** — deploy frontend (free, CDN)
-5. **cron-job.org** — keep Render warm during working hours (free)
+> **👉 Read [`revised-master-plan.md`](revised-master-plan.md) FIRST.**
+> It is the definitive plan that supersedes all others, incorporating the cross-check
+> findings and risk mitigation strategy.
 
-See [`free-tier-deployment.md`](free-tier-deployment.md) for complete setup guide.
+**Start with Phase 0 (De-risk):** Test zarr-cesium with a small Zarr from R2 before
+committing to the full build. This single test determines our entire rendering approach.
 
 ## Multi-Account Render (if needed)
 
