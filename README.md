@@ -56,6 +56,17 @@ Start with [`docs/DOC-MAP.md`](docs/DOC-MAP.md) (canonical layout), then [`docs/
 
 ---
 
+## Repository Rules
+
+1. `docs/` is shared, team-owned. Never rewrite another contributor's file. Link fixes only where paths moved.
+2. Personal research lives under `research/individuals/<username>/`. Never edit another namespace.
+3. `problem-statement/` is the requirement authority. New claims cite its R/F IDs or stay in personal namespace.
+4. `docs/data/` cards required before any fixture use: source URL, sha256, license, bbox, variables, assumptions.
+5. Reorganize by moving paths only — one commit per move, no content changes in moved files.
+6. No bulk science data in Git. Fixtures + checksums + acquisition scripts only.
+
+---
+
 ## Tech Stack (Summary)
 
 | Layer | Technology |
