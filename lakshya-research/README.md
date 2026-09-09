@@ -40,6 +40,7 @@ Browser → Render (only for isosurface)    ← occasional, cold start OK
 | [`deployment-checklist.md`](deployment-checklist.md) | Step-by-step checklist |
 | [`render-vs-alternatives.md`](render-vs-alternatives.md) | Render vs alternatives comparison |
 | [`change-log.md`](change-log.md) | **All decisions & architecture changes** — detailed record of every change |
+| [`cross-check-verification.md`](cross-check-verification.md) | **Honest risk assessment** — verifies each decision, flags risks, fallbacks |
 
 ## Quick Start (Free Tier)
 
