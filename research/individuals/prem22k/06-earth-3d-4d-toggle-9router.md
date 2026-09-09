@@ -58,7 +58,7 @@ Lazier alternative: preset locations replace geocoder (same demo effect, fewer d
 - [GlobeTranslucency](https://cesium.com/learn/cesiumjs/ref-doc/GlobeTranslucency.html),
   [camera guide](https://cesium.com/learn/cesiumjs-learn/cesiumjs-camera).
 - Known risk: camera jump with translucency since 1.136
-  ([issue #13092](https://github.com/CesiumGS/cesium/issues/13092)). Pin/test Cesium version.
+  ([issue #13092](https://github.com/CesiumGS/cesium/issues/13092) — UNVERIFIED 2026-09-09, no fetch this session). Pin ≥1.119 (zarr-cesium floor), test translucency behavior at pin before ADR.
 - Prior art: Terradepth seabed/wrecks on Cesium; Camptocamp boreholes/seismic.
 
 ## 5. zarr-cesium — rendering core confirmed
@@ -67,6 +67,10 @@ Repo: [NOC-OI/zarr-cesium](https://github.com/NOC-OI/zarr-cesium) (MIT, TS, demo
 [site](https://noc-oi.github.io/zarr-cesium/), docs
 [site](https://noc-oi.github.io/zarr-cesium/docs)). v2+v3, multiscale (ndpyramid),
 EPSG:4326/3857, on-demand streaming, GPU color mapping.
+Fetched README 2026-09-09 adds: Icechunk/custom Zarrita stores, private HTTP
+(`requestOverrides`/`transformRequest`/`onAuthError`), point/time-series/
+profile/transect query APIs with cancellation, CesiumJS 1.119+ incl 1.142+.
+Query APIs cover F2 click-profile plumbing — cite in stack ADR.
 
 | Provider | Role in toggle |
 |---|---|
@@ -98,6 +102,7 @@ Peer 4D references: [DOVis](https://github.com/HungerBar/DOVis) (FastAPI + Cesiu
 
 ## Open threads
 
-- Cesium version pin vs translucency camera bug.
+- Verify Cesium #13092 status, then pin version (floor ≥1.119) + ADR.
+- Resolve Esri "archwatch" target or drop assumption.
 - Observations GeoJSON-vs-Arrow cutoff; chunk hypothesis benchmark; reference laptop lock.
 - Geocoder vs presets decision (presets first).

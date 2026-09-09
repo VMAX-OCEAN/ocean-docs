@@ -10,7 +10,7 @@ From shared ChatGPT paste. Keep principles, cut decoration.
 - Journalism: direct labels + nearby units beside phenomenon. Matches provenance rule. Keep.
 - SaaS disclosure: OCEAN → FLOAT → PROFILE → MODEL VS OBS → RESIDUAL. Matches M1→M2→M3 order. Gate last step on QC/method.
 - Mapbox 4D canvas lat×lon×depth×time: matches canonical grid. Keep.
-- 2025 WebGPU ray-cast study (early termination, adaptive sampling, slicing, time animation): validates slices/curtain/isosurface first, full volume stretch. Cite as limiter.
+- WebGPU volume framework (Yu et al, Appl Sci 15(5):2782 — ray casting + early termination + adaptive sampling, Babylon.js + WebGPU, regular + irregular grids): validates slices/curtain/isosurface first, full volume stretch. Verified 2026-09-09 via [MDPI](https://www.mdpi.com/2076-3417/15/5/2782). Cite as limiter.
 
 ## Visual system
 
@@ -30,6 +30,10 @@ Enter → Approach → Reality → Grab → Compare → Divergence → Investiga
 Sign fix: paste uses `E = O − M`. Docs enforce `residual = model − observation`. Use docs form.
 
 Constraint: point divergence now, volume divergence deferred. Sparse floats cannot form dense volume without interpolation assumptions. Require pre-warmed presets + abort superseded fetches + low-res first.
+
+## Outreach checklist (from 07: MyOcean Pro verified features)
+
+- Deep link incl layers/objects/plots, embed iframe, guided tour for beginners. Add to M5 outreach mode alongside tours copied from NASA Eyes pattern.
 
 ## Thesis
 

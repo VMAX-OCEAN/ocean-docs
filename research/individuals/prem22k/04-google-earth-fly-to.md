@@ -1,6 +1,8 @@
-# Google-earth fly-to (2026-09-09)
+# Google-earth fly-to (2026-09-09, strengthened 07)
 
 Idea: search location → fly-to → zoom 3D → relevant filters.
+
+Verified 2026-09-09: MyOcean Pro has NO geocoder (❌ UX table, [features](https://help.marine.copernicus.eu/en/articles/4794675-main-features-of-myocean-pro-viewer)). Fly-to is differentiation, not parity — keep in pitch.
 
 ## Fit
 
