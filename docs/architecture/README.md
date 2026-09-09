@@ -10,4 +10,5 @@ for the SIH-OCEAN platform.
 | [`tech-stack.md`](tech-stack.md) | Complete tech stack with rationale for each choice |
 | [`system-architecture.md`](system-architecture.md) | High-level system architecture and data flow diagram |
 | [`backend-strategy.md`](backend-strategy.md) | Backend strategy comparison and recommendation (xpublish + Zarr) |
+| [`TECH-STACK-SUMMARY.md`](TECH-STACK-SUMMARY.md) | Condensed tech stack reference |
 | [`project-structure.md`](project-structure.md) | Repository and code organization |

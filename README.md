@@ -41,13 +41,16 @@ interactive environment. This project builds that platform.
 This repository contains the complete research, architecture, and implementation plan.
 Documentation is organized into folders:
 
+Start with [`docs/DOC-MAP.md`](docs/DOC-MAP.md) (canonical layout), then [`docs/00-problem/`](docs/00-problem/) (PS authority).
+
 | Folder | Contents |
 |---|---|
+| [`docs/00-problem/`](docs/00-problem/) | PS analysis — binding requirements, mandates, datasets, open items |
 | [`docs/research/`](docs/research/) | Research on Google Earth, earth.nullschool, open-source ocean viz projects, temperature rendering techniques |
 | [`docs/architecture/`](docs/architecture/) | System architecture, tech stack decisions, data flow, backend strategy |
 | [`docs/visualization/`](docs/visualization/) | Globe rendering, day/night lighting, temperature overlay, ocean currents, isosurfaces, colorbars |
-| [`docs/data/`](docs/data/) | Dataset details — GLORYS12, Argo, Glider, NetCDF-to-Zarr conversion, data formats |
-| [`docs/roadmap/`](docs/roadmap/) | Milestone plan, tech stack summary, project structure |
+| [`docs/data/`](docs/data/) | Dataset cards (placeholder) — GLORYS12, Argo, Glider, INCOIS LAS |
+| [`docs/roadmap/`](docs/roadmap/) | Milestone plan (`MILESTONES.md`) |
 | [`docs/performance/`](docs/performance/) | Runtime performance benchmarks, latency analysis, optimization |
 | [`docs/references/`](docs/references/) | Open-source project references, papers, libraries, links |
 
@@ -95,7 +98,7 @@ cd frontend && npm install && npm run dev
 | Glider data | ftp.ifremer.fr/glider | NetCDF | — |
 | INCOIS LAS | las.incois.gov.in | NetCDF/OPeNDAP | — |
 
-See [`docs/data/`](docs/data/) for details.
+See [`docs/data/`](docs/data/) for card template (cards pending).
 
 ---
 
