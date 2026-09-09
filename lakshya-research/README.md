@@ -39,6 +39,7 @@ Browser → Render (only for isosurface)    ← occasional, cold start OK
 | [`pricing-analysis.md`](pricing-analysis.md) | Cost breakdown (free vs paid) |
 | [`deployment-checklist.md`](deployment-checklist.md) | Step-by-step checklist |
 | [`render-vs-alternatives.md`](render-vs-alternatives.md) | Render vs alternatives comparison |
+| [`change-log.md`](change-log.md) | **All decisions & architecture changes** — detailed record of every change |
 
 ## Quick Start (Free Tier)
 
