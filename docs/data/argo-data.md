@@ -82,8 +82,11 @@ ds = ArgoFloat(6901254).open_dataset('prof')
 from argopy import DataFetcher
 
 # Fetch Argo data for Indian Ocean, 2026
+# argopy region() box order: lon_min, lon_max, lat_min, lat_max,
+#                            dpt_min, dpt_max, [dates]
 ds = DataFetcher().region(
-    [-90, 30, 180, 90,        # lon_min, lat_min, lon_max, lat_max
+    [30, 100, -5, 30,         # lon_min, lon_max, lat_min, lat_max
+     0, 2000,                 # dpt_min, dpt_max (required pair)
      '2026-01-01', '2026-12-31']
 ).to_xarray()
 ```
@@ -94,7 +97,9 @@ ds = DataFetcher().region(
 from argopy import ArgoIndex
 
 # Get index of floats in Indian Ocean
-idx = ArgoIndex().search_lat_lon([-90, 30, 180, 90])
+# BOX order: [lon_min, lon_max, lat_min, lat_max, date_min?, date_max?]
+idx = ArgoIndex(index_file='core')
+idx.query.box([30, 100, -5, 30])
 df = idx.to_dataframe()
 # → DataFrame with float WMO, lat, lon, date, profile count
 ```

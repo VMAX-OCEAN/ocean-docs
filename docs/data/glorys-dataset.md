@@ -43,7 +43,8 @@ The primary ocean model output dataset for SIH-OCEAN.
 | Salinity | `so` | PSU | Sea water salinity |
 | Eastward current | `uo` | m/s | Eastward sea water velocity |
 | Northward current | `vo` | m/s | Northward sea water velocity |
-| Vertical current | `wmo` | m/s | Vertical sea water velocity |
+
+> No vertical-velocity variable exists in `GLOBAL_MULTIYEAR_PHY_001_030` (PUM Table 2, product metadata). Only `uo`/`vo`. True 3D particle trajectories need `w`, which this product does not provide — per `revised-master-plan.md` scope table.
 
 ### 2D Variables (surface)
 
