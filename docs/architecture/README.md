@@ -12,3 +12,4 @@ for the SIH-OCEAN platform.
 | [`backend-strategy.md`](backend-strategy.md) | Backend strategy comparison and recommendation (xpublish + Zarr) |
 | [`TECH-STACK-SUMMARY.md`](TECH-STACK-SUMMARY.md) | Condensed tech stack reference |
 | [`project-structure.md`](project-structure.md) | Repository and code organization |
+| [`adr/`](adr/README.md) | Architecture Decision Records — 5 binding decisions (PyNIO drop, Cesium-over-Three, OPeNDAP facade, chunking, marker cutoff) |
