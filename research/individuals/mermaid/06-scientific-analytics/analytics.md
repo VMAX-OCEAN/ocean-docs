@@ -1,7 +1,7 @@
 # Scientific Analytics
 
 ## Residual
-E(x,y,z,t) = O(x,y,z,t) − M(x,y,z,t)
+E(x,y,z,t) = M(x,y,z,t) − O(x,y,z,t)
 
 Research co-location, interpolation, quality control and uncertainty.
 

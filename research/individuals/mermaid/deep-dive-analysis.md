@@ -16,13 +16,13 @@ Traditional platforms (like *Copernicus MyOcean Pro* or *Ocean Data View*) excel
 
 Mermaid extends the baseline of **Model + Observation + 3D Rendering** by focusing on:
 - **Spatiotemporal Co-location**: Aligning model predictions with observational truths in real-time.
-- **Residual & Error Fields**: Focusing on the discrepancies ($E = Observation - Model$).
+- **Residual & Error Fields**: Focusing on the discrepancies ($E = Model - Observation$).
 - **Uncertainty & Features**: Exposing uncertainty visually and enabling the tracking of emergent oceanic features.
 
 ## 2. Scientific Analytics Engine
 
 Mermaid doesn't just display data; it computes and compares it. 
-* **Residual Analysis**: Calculating the difference between observation $O(x,y,z,t)$ and model $M(x,y,z,t)$ to understand where reality diverges from predictions.
+* **Residual Analysis**: Calculating the difference between model $M(x,y,z,t)$ and observation $O(x,y,z,t)$ to understand where reality diverges from predictions.
 * **Feature Extraction**: Identifying eddies, fronts, upwellings, and blooms using scientific methods (gradients, vorticity, Okubo-Weiss).
 * **Trajectory Analysis**: Sampling model data along the real-world 4D trajectory of an observational float.
 * **Temporal Tracking**: Following features from birth through movement, growth, and decay, representing state changes and associated uncertainties.
