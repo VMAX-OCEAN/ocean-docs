@@ -19,3 +19,4 @@ open-source projects relevant to building the SIH-OCEAN 3D ocean visualization p
 | [`remaining-research-checklist.md`](remaining-research-checklist.md) | D1-D8 tracker with all verdicts |
 | [`verification-ledger.md`](verification-ledger.md) | Every load-bearing claim + source + status; 13 corrections logged |
 | [`d8-sign-and-gates.md`](d8-sign-and-gates.md) | Residual sign (done) + Q7/Q9/Q10 gates |
+| [`comparison/`](comparison/README.md) | Namespace comparison suite (01–08): PS authority, lakshya/prem22k/mermaid tracks, head-to-head, ratings, gaps, merged plan |

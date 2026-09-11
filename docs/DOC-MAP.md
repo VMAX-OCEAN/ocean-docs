@@ -6,7 +6,7 @@ Single entry point. Folder READMEs mirror this table; this file wins on conflict
 |---|---|---|---|
 | 00 | `00-problem/` | PS truth + analysis | `PROBLEM-STATEMENT-ANALYSIS.md` (binding R/F IDs, mandates, datasets, open items) |
 | — | `RESEARCH-PROGRAM.md` | research program overview + status | D1-D8 map, open items, reading order |
-| 01 | `research/` | benchmarks, teardowns, techniques | google-earth, nullschool, platform-comparison, open-source-projects, temperature-rendering, d4-lib-pins, d5-externals, d6-capacity, d7-mandate-beats, remaining-research-checklist |
+| 01 | `research/` | benchmarks, teardowns, techniques | `comparison/` (01–08 suite) added | google-earth, nullschool, platform-comparison, open-source-projects, temperature-rendering, d4-lib-pins, d5-externals, d6-capacity, d7-mandate-beats, remaining-research-checklist |
 | 02 | `architecture/` | stack + system + backend + code layout | system-architecture, tech-stack, `TECH-STACK-SUMMARY.md`, backend-strategy, project-structure, `adr/` (5 ADRs) |
 | 03 | `visualization/` | render techniques + controls | globe-rendering, day-night-lighting, temperature-overlay, ocean-currents, isosurfaces, colorbar-editor |
 | 04 | `data/` | dataset cards, contracts, ingest | `README.md` (placeholder — cards per PS link go here) |
